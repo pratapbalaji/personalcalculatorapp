@@ -1,2 +1,2 @@
 # personalcalculatorapp
-Personal calculator app that has a record of all calculations
+Personal calculator app that keeps records of calculations performed.
