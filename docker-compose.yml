@@ -3,6 +3,16 @@ version: '3'
 services:
   db:
     image: postgres
+  node:
+    container_name: node_server
+    build:
+      context: .
+      dockerfile: ./docker_compose/node/development/Dockerfile
+    command: /start.sh
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000

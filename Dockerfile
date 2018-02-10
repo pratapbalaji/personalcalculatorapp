@@ -3,5 +3,5 @@
  RUN mkdir /code
  WORKDIR /code
  ADD requirements.txt /code/
- RUN pip install -r requirements.txt
+ RUN pip install -r requirements.txt && npm install && npm run watch
  ADD . /code/
