@@ -1,8 +1,8 @@
 FROM node:latest
 
-COPY . /app
+COPY . /code
 
-WORKDIR /app
+WORKDIR /code
 RUN npm install
 
 COPY ./docker_compose/node/development/start.sh /start.sh

@@ -3,6 +3,8 @@ var BundleTracker = require('webpack-bundle-tracker');
 var webpack = require('webpack');
 var config = {};
 
+console.log(__dirname);
+
 config.entry = {
   main: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
@@ -30,13 +32,23 @@ config.module = {
     }
   }, {
     test: /\.css$/,
-    loader: 'style-loader!css-loader'
+    use: [
+      {
+        loader: 'style-loader',
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+        },
+      }
+    ]
   }]
 };
 
 config.plugins = [
   new webpack.HotModuleReplacementPlugin(),
-  new BundleTracker({ filename: './webpack/webpack-stats.dev.json' }),
+  new BundleTracker({ filename: './webpack-stats.dev.json' }),
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify('development'),

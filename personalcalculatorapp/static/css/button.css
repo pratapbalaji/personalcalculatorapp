@@ -1,0 +1,27 @@
+.button {
+  width: 25px; 
+  border-width: 1px;
+  border-style: solid;
+  border-color: coral;
+  background-color: blanchedalmond;
+  text-align: center;
+  display: inline-block;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 235, 205, 0.68);
+}
+
+.button.fill {
+  background-color: rgb(216, 109, 70);
+  color: white;
+}
+
+.button.fill:hover {
+  background-color: rgba(216, 109, 70, 0.769);
+}
+
+.button.buttonLarge {
+  width: 79px; 
+}

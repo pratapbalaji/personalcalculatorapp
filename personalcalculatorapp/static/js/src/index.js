@@ -1,23 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import HelloWorld from './components/hello-world';
+import App from './components/App';
 
 ReactDOM.render(
   <AppContainer>
-    <HelloWorld />
+    <App />
   </AppContainer>,
-  document.getElementById('react-root')
+  document.getElementById('container')
 );
 
 if (module.hot) {
-  module.hot.accept('./components/hello-world', () => {
-    const HelloWorld = require('./components/hello-world').default;
+  module.hot.accept('./components/App', () => {
+    const App = require('./components/App').default;
     ReactDOM.render(
       <AppContainer>
-        <HelloWorld />
+        <App />
       </AppContainer>,
-      document.getElementById('react-root')
+      document.getElementById('container')
     );
   });
 }

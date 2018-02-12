@@ -1,0 +1,20 @@
+.display {
+  width: 102px;
+  border-width: 2px;
+  border-bottom-style: none;
+  border-style: solid;
+  border-color: rgb(67, 7, 7);
+  text-align: right;
+  padding: 2px;
+  background-color: rgb(118, 14, 14);
+  color: whitesmoke;
+  overflow: hidden;
+}
+
+.container {
+  width: 108px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: coral;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
