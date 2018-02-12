@@ -37,7 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'rest_auth.registration',
+    'personalcalculatorapp',
     'webpack_loader'
 ]
 
@@ -132,4 +140,9 @@ WEBPACK_LOADER = {
         'BUNDLE_DIR_NAME': os.path.join(APP_DIR, "static/builds-development"),
         'STATS_FILE': os.path.join(APP_DIR, 'static/webpack', 'webpack-stats.dev.json')
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (),
 }
