@@ -44,7 +44,19 @@ export default class Calculator extends Component {
           holder = operatee + value;
           break;
       }
-    return +holder.toFixed(3);
+    holder = +holder.toFixed(3);
+    this.recordCalculation(`${operatee} ${operator} ${value} = ${holder}`);
+    return holder;
+  }
+
+  recordCalculation = (text) => {
+    var coreapi = window.coreapi;
+    var schema = window.schema;
+    var client = new coreapi.Client();
+    var action = ["calculations", "create"];
+    var params = {calculations: text};
+    client.action(schema, action, params).then(function(result) {
+    })
   }
 
   buttonPress = (btn) => {
@@ -126,7 +138,7 @@ export default class Calculator extends Component {
     return (
       <div>
         <Display text={value} />
-        <div className={s.container}>
+        <div className={s.calcContainer}>
           <div>
             {this.renderButtons(['clear', '÷'])}
           </div>

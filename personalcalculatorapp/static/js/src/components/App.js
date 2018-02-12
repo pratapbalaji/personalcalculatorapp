@@ -3,7 +3,7 @@ import Calculator from '../containers/Calculator';
 import Button from './Button';
 
 const App = () => (
-  <div className="content">
+  <div>
     <Calculator />
   </div>
 )

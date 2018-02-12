@@ -13,8 +13,8 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body>
+    <a href="http://www.google.com"><button type="button">View Logs</button></a>
     <div id="container"></div>
-    <div id="list"></div>
     <script src="{% static 'builds-development/main.js' %}"></script>
     <script src="{% static 'rest_framework/js/coreapi-0.1.1.js' %}"></script>
     <script src="{% url 'api-docs:schema-js' %}"></script>
@@ -22,15 +22,9 @@
       var coreapi = window.coreapi;
       var schema = window.schema;
       var client = new coreapi.Client();
-      var action = ["calculations", "list"];
+      action = ["calculations", "list"]
       client.action(schema, action).then(function(result) {
         console.log(result);
-        for (var i=0; i<result.length; i++) {
-          var x = document.createElement("div");
-          var t = document.createTextNode(result[i].calculations);
-          x.appendChild(t);
-          document.getElementById("list").appendChild(x);
-        }
       })
     </script>
   </body>
