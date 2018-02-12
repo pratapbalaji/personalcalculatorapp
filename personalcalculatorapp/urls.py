@@ -18,6 +18,7 @@ from django.contrib import admin
 from personalcalculatorapp import views
 from django.views.generic import TemplateView
 from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -29,5 +30,6 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^rest-auth/', include('rest_auth.urls')),
-    url(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^docs/', include_docs_urls(title='My API service'))
 ]

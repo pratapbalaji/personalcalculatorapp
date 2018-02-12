@@ -1,8 +1,10 @@
 Django>=1.8,<2.0
 django-allauth==0.30.0
 django-rest-auth==0.9.0
-djangorestframework==3.5.3
-djangorestframework-jwt==1.9.0
+djangorestframework
+djangorestframework-jwt
 django-extensions==1.7.5
+django-coreapi
+coreapi
 psycopg2
 django-webpack-loader

@@ -9,3 +9,10 @@ body {
   margin: -140px 0 0 -70px;
   position: absolute;
 }
+
+#list {
+  top: 10%;
+  left: 90%;
+  /* margin: -140px 0 0 -70px; */
+  position: absolute;
+}
