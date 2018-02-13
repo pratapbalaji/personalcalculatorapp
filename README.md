@@ -7,7 +7,7 @@ Personal calculator app that keeps records of calculations performed. This app u
 
 Steps to install the app
 - Git clone this repo into your local drive
-- Navigate to the project folder and run the command - `docker-compose up`
+- Navigate to the project folder and run the command `docker-compose up`
 
 Using the app
 - The home page is a calculator UI that will allow you to perform non-decimal basic arithmetic calculations. 
