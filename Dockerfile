@@ -12,4 +12,6 @@
  ADD requirements.txt /code/
  COPY package.json /code/
  ADD . /code/
- RUN pip install -r requirements.txt && npm install
+ RUN pip install -r requirements.txt
+ COPY entrypoint.sh /entrypoint.sh
+ RUN chmod +x /entrypoint.sh

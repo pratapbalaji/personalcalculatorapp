@@ -19,14 +19,5 @@
     <script src="{% static 'builds-development/main.js' %}"></script>
     <script src="{% static 'rest_framework/js/coreapi-0.1.1.js' %}"></script>
     <script src="{% url 'api-docs:schema-js' %}"></script>
-    <script>
-      var coreapi = window.coreapi;
-      var schema = window.schema;
-      var client = new coreapi.Client();
-      action = ["calculations", "list"]
-      client.action(schema, action).then(function(result) {
-        console.log(result);
-      })
-    </script>
   </body>
 </html>
