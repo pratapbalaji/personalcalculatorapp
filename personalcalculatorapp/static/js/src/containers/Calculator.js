@@ -45,7 +45,9 @@ export default class Calculator extends Component {
           break;
       }
     holder = +holder.toFixed(3);
-    this.recordCalculation(`${operatee} ${operator} ${value} = ${holder}`);
+    if (operator == '+' || operator == '-' || operator == 'x' || operator == '*' || operator == '/' || operator == '÷') {
+      this.recordCalculation(`${operatee} ${operator} ${value} = ${holder}`);
+    }
     return holder;
   }
 
