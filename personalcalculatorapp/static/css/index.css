@@ -1,3 +1,15 @@
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
 body {
   background-color: burlywood;
 }
@@ -12,4 +24,9 @@ body {
 
 #calc {
   display: none;
+}
+
+.table .thead-dark th {
+  background-color: rgb(67, 7, 7);
+  border-color: rgb(67, 7, 7);
 }

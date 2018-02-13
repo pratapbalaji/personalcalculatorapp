@@ -14,9 +14,16 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
   </head>
   <body>
-    <a href="{% url 'logs' %}"><button type="button">View Logs</button></a>
-    <div id="container"></div>
-    <script src="{% static 'builds-development/main.js' %}"></script>
+    <a href="{% url 'home' %}"><button type="button">View Calculator</button></a>
+    <br /><br />
+    <table class="table table-hover">
+      <thead class="thead-dark">
+          <th scope="col">#</th>
+          <th scope="col">Calculations</th>
+      </thead>
+      <tbody id="logtable">
+      </tbody>
+    </table>
     <script src="{% static 'rest_framework/js/coreapi-0.1.1.js' %}"></script>
     <script src="{% url 'api-docs:schema-js' %}"></script>
     <script>
@@ -25,7 +32,18 @@
       var client = new coreapi.Client();
       action = ["calculations", "list"]
       client.action(schema, action).then(function(result) {
-        console.log(result);
+        for (var i=result.length-1; i>=0; i--) {
+          var tr = document.createElement("tr");
+          var th = document.createElement("th")
+          var td = document.createElement("td");
+          var id = document.createTextNode(result[i].id);
+          var calculations = document.createTextNode(result[i].calculations);
+          th.appendChild(id);
+          td.appendChild(calculations);
+          tr.appendChild(th);
+          tr.appendChild(td);
+          document.getElementById('logtable').appendChild(tr);
+        }
       })
     </script>
   </body>
